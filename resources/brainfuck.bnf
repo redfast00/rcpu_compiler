@@ -1,0 +1,4 @@
+<S> = atom+
+<atom> = single|jumppair
+single = '+'|'-'|'>'|'<'|'.'|','
+jumppair=<'['> atom+ <']'>
