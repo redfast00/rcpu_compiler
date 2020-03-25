@@ -76,12 +76,18 @@
       ]
       (long-str
         (str "LDV16 D, " begin-label)
+        "LDV A, 255"
+        "AND B, A"
+        "LDV A, 0"
         "JLT B, D"
         (str "LDV16 D, " end-label)
         "JMR D"
         begin-label
         (clojure.string/join "\n" (map compile-main (node :content)))
         (str "LDV16 D, " begin-label)
+        "LDV A, 255"
+        "AND B, A"
+        "LDV A, 0"
         "JLT B, D" ; jump if A < B (so 0 < B, B != 0)
         end-label
       )
