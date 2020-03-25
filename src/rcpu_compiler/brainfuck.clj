@@ -103,7 +103,7 @@
 
 (defn remove-non-brainfuck
   [s]
-  (clojure.string/replace s #"[^\[\]+-,.<>]" "")
+  (clojure.string/replace s #"[^\[\]+\-,.<>]" "")
 )
 
 (defn -main
